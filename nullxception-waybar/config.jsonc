@@ -1,0 +1,84 @@
+{
+    "modules-left": [
+        "hyprland/submap",
+        "wlr/workspaces",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "tray",
+        "battery",
+//      "temperature",
+        "cpu",
+        "memory",
+        "network",
+        "pulseaudio"
+    ],
+    "wlr/workspaces": {
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace r+1",
+        "on-scroll-down": "hyprctl dispatch workspace r-1",
+    },
+    "hyprland/submap": {
+        "format": "󰌓 \u2001{}",
+        "tooltip": false
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10,
+        "show-passive-items": true
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%A, %b %d | %I:%M %p}"
+    },
+    "temperature": {
+        "format": "󰜗\u2001{temperatureC}°C",
+        "tooltip": false
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
+    },
+    "pulseaudio": {
+        "scroll-step": 2,
+        "format": "{icon}\u2001{volume}%",
+        "format-bluetooth": "{icon}\u2001{volume}%\u2001",
+        "format-muted": "",
+        "format-icons": {
+            "default": [
+                "",
+                ""
+            ]
+        },
+        "on-click": "pavucontrol",
+        "tooltip": false
+    },
+    "network": {
+        "format-wifi": "󰤥\u2001{essid}",
+        "format-ethernet": "󰌘\u2001{ipaddr}",
+        "format-disconnected": "󰌙\u2001offline",
+        "format-alt": "󰇧\u2001{ifname}: {ipaddr}",
+        "tooltip": false
+    },
+    "cpu": {
+        "format": "\u2001{usage}%",
+        "interval": 2,
+        "tooltip": false
+    },
+    "memory": {
+        "format": "\u2001{used} GiB",
+        "interval": 2,
+        "tooltip": false
+    }
+}
